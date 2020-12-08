@@ -1,4 +1,8 @@
 {
+    "env":
+    {
+        "url": "https://www.autoscout24.com/" 
+    },
     "chromeWebSecurity": false,
     "projectId": "ukeaqu"
 }
