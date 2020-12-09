@@ -16,26 +16,26 @@ Cypress.Commands.add("searchByCaravan",(bodytype, make, stregistration, price, c
      findveh.getBodyType().click({force:true})
 
      //Select Make
-     findveh.getMake().click()
-     findveh.getMakeOption().contains(make).click()
+     findveh.getMake().click({force:true})
+     findveh.getMakeOption().contains(make).click({force:true})
 
      //Select First Registration
-     findveh.getFirsRegistration().click();
-     findveh.getFirsRegistrationOption().contains(stregistration).click();
+     findveh.getFirsRegistration().click({force:true});
+     findveh.getFirsRegistrationOption().contains(stregistration).click({force:true});
 
      //Select Price
-     findveh.getPrice().select(price) //Price
+     findveh.getPrice().select(price, {force:true}) //Price
 
      //Select Country
-     findveh.getCountry().click();
-     findveh.getCountryOption().contains(country).click();
+     findveh.getCountry().click({force:true});
+     findveh.getCountryOption().contains(country).click({force:true});
 
      //Enter City
-     findveh.getCity().type('65558')      //City ZIP
-     findveh.getCityOption().contains(" Gückingen (Gmd. Burgschwalbach)").click()
+     findveh.getCity().type('65558',{force:true})      //City ZIP
+     findveh.getCityOption().contains(" Gückingen (Gmd. Burgschwalbach)").click({force:true})
 
      //Select ZIP Radius
-     findveh.getRadius().select(radius);
+     findveh.getRadius().select(radius, {force:true});
 
      //Tick/Untick Cross-Border
      cy.contains('label', 'Cross-border')  // find your text
