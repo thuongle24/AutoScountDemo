@@ -16,6 +16,7 @@ require('cypress-plugin-tab')
 // Import commands.js using ES2015 syntax:
 import './commands'
 import '../integration/autoScout/assertions/checkSearchResult'
+import './autoScout/actions/searchVechileBy'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
