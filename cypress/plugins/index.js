@@ -11,18 +11,12 @@
 
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
-
+const cucumber = require('cypress-cucumber-preprocessor').default
 /**
  * @type {Cypress.PluginConfig}
  */
 module.exports = (on, config) => {
+  on('file:preprocessor', cucumber())
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
-  on("before:browser:launch", (browser = {}, args) => {
-    if (browser.name === "chrome") {
-      args.push("--disable-features=CrossSiteDocumentBlockingIfIsolating,CrossSiteDocumentBlockingAlways,IsolateOrigins,site-per-process");
-      args.push("--load-extension=cypress/extensions/Ignore-X-Frame-headers_v1.1");
-      return args;
-    }
-  });
 }
